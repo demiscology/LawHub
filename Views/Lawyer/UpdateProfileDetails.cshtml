@@ -1,0 +1,62 @@
+﻿@model Law_Hub.Models.Lawyers_Profile
+@{
+    ViewData["Title"] = "UpdateProfileDetails";
+    Layout = "~/Views/Shared/_LayoutLawyers.cshtml";
+}
+
+<!-- banner -->
+<div class="banner">
+    <h2>EIDT PROFILE</h2>
+    <p><a>@Html.ActionLink("Home »", "Index", "Lawyer")</a> <a>@Html.ActionLink("Manage Profile »", "Index", "Lawyer")</a> Update Profile Picture</p>
+</div>
+<!--//banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="main-content">
+                <div class="signin-form profile">
+                    <div class="signin-form">
+                        <div>
+                            <form asp-area="" asp-controller="Lawyer" asp-action="UpdateProfileDetails" method="post" enctype="multipart/form-data">
+                                <h4>Update Your Profile. To update readonly textboxes, Kindly send an email to info@lawhub.com</h4>
+                                <input type="text" placeholder="@Model.Title" readonly />
+                                <input type="text" placeholder="@Model.First_Name" readonly />
+                                <input type="text" placeholder="@Model.Other_Names" readonly />
+                                <input type="text" placeholder="@Model.Last_Name" readonly />
+                                <input type="text" placeholder="@Model.Other_Titles" readonly />
+                                <input type="text" placeholder="@Model.Phone_Number" readonly />
+                                <input type="text" placeholder="@Model.Office_Address" readonly />
+                                <input type="text" name="Email" required="" placeholder="@Model.Email" />
+                                <input type="text" name="Experiences" required="" placeholder="@Model.Experiences" />
+                                <div class="box" style="text-align:left">
+                                    <input type="file" required="" name="Certificates_Paths" id="file-1" class="inputfile inputfile-1 invisible" />
+                                    <label for="file-1" class="fa fa-upload inputlabel" id="label_span"><span>Add a file</span></label>
+                                </div>
+                                <input type="submit" value="Update Profile" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .fa-upload {
+        margin-right: 10px;
+    }
+
+    .inputlabel {
+        background-color: #17202A;
+        color: #52BE80;
+        padding: 30px;
+        transition: 0.3s;
+    }
+
+        .inputlabel:hover {
+            background-color: #2C3E50;
+            cursor: pointer
+        }
+</style>

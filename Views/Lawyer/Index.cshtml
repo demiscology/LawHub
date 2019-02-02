@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model Law_Hub.Models.Lawyers_Profile
+
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutLawyers.cshtml";
+}
+
+
+<div class="services">
+    <div class="container ">
+        <h3 class="heading "></h3>
+        <div class="service_grids">
+            <div class="col-md-3 service_grid1">
+                @if (Model.ProfilePicture != null)
+                {
+                    <img src="~/ProfilePictures/@Model.ProfilePicture" class="img-rounded" style="height:285px;width:285px;" alt="Profile Picture" />
+                }
+                else if (Model.Sex == "Male")
+                {
+                    <img src="~/Icons/MaleIcon.jpg" class="img-rounded" alt="Profile Picture" />
+                }
+                else
+                {
+                    <img src="~/Icons/FemaleIcon.png" class="img-rounded" alt="Profile Picture" />
+
+                }
+
+            </div>
+            <div class="col-md-3 service_grid2">
+                <h3>Name</h3>
+                <p>@Model.Title @Model.First_Name  @Model.Other_Names  @Model.Last_Name</p>
+                <h3>Contact</h3>
+                <p>@Model.Phone_Number</p>
+                <p>@Model.Email</p>
+            </div>
+            <div class="col-md-3 service_grid2">
+                <h3>Address</h3>
+                <p>@Model.Office_Address</p>
+                <h3>Extra Quailifications</h3>
+                <p>@Model.Other_Titles</p>
+            </div>
+            <div class="col-md-3 service_grid2">
+                <h3>Area Of Expertise</h3>
+                <p>@Model.Experiences</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

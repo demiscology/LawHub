@@ -1,0 +1,89 @@
+﻿@model Law_Hub.Models.Lawyers_Profile
+
+
+@{
+    ViewData["Title"] = "Create_Profile";
+    Layout = "~/Views/Shared/_LayoutLawyers.cshtml";
+}
+
+
+
+
+<h4>Lawyer_Profiles</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Lawyer" asp-action="Create_Profile">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Other_Titles" class="control-label"></label>
+                <input asp-for="Other_Titles" class="form-control" />
+                <span asp-validation-for="Other_Titles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="First_Name" class="control-label"></label>
+                <input asp-for="First_Name" class="form-control" />
+                <span asp-validation-for="First_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Other_Names" class="control-label"></label>
+                <input asp-for="Other_Names" class="form-control" />
+                <span asp-validation-for="Other_Names" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Last_Name" class="control-label"></label>
+                <input asp-for="Last_Name" class="form-control" />
+                <span asp-validation-for="Last_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sex" class="control-label"></label>
+                <input asp-for="Sex" class="form-control" />
+                <span asp-validation-for="Sex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Maiden_Name" class="control-label"></label>
+                <input asp-for="Maiden_Name" class="form-control" />
+                <span asp-validation-for="Maiden_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone_Number" class="control-label"></label>
+                <input asp-for="Phone_Number" class="form-control" />
+                <span asp-validation-for="Phone_Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Office_Address" class="control-label"></label>
+                <input asp-for="Office_Address" class="form-control" />
+                <span asp-validation-for="Office_Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Experiences" class="control-label"></label>
+                <input asp-for="Experiences" class="form-control" />
+                <span asp-validation-for="Experiences" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Certificates_Paths" class="control-label"></label>
+                <input asp-for="Certificates_Paths" class="form-control" />
+                <span asp-validation-for="Certificates_Paths" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+            <div>@ViewBag.error</div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

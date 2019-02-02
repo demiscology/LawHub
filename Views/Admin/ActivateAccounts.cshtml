@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Law_Hub.Models.ActivateAccounts>
+@{
+    ViewData["Title"] = "ActivateAccounts";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    table {
+        font-family: Arial,sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+
+<!-- banner -->
+<div class="banner">
+    <h2>Activate Accounts</h2>
+    <p><a>@Html.ActionLink("Home »", "Index", "Admin")</a>Manage Users » Manage Accounts</p>
+</div>
+<!--//banner -->
+<link href="~/DataTables/datatables.css" rel="stylesheet" />
+
+
+<table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Sex</th>
+            <th>Phone Number</th>
+            <th>Account Activated</th>
+            <th>Activate Account</th>
+            <th>Dis-Activate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var asset in Model)
+        {
+            <tr id="@asset.Id">
+                <td id="Id">@asset.Id</td>
+                <td>@asset.First_Name</td>
+                <td>@asset.Last_Name</td>
+                <td>@asset.Sex</td>
+                <td>@asset.Phone_Number</td>
+                <td>@asset.Account_Activated</td>
+                <td><button id="Activate_Account_@asset.Id" class="btn btn-block btn-success" type="submit" value="@asset.Id">Activate Account</button></td>
+                <td><button id="Dis-activate_Account_@asset.Id" class="btn btn-block btn-danger" type="submit" value="@asset.Id&dis">Dis-Activate Account</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script src="~/DataTables/datatables.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('button').click(function (evt) {
+            var data = $(this).val();
+            var btn = $(evt.target);
+            var pa = btn.parent('td').prev('td');
+
+            
+
+            if (data.includes("&dis")) {
+                //Getting the button row and updating the table data
+                var ap = btn.parent('td').prev('td').prev('td');
+                setTimeout(function () { ap.text(0); }, 100);
+            } else {
+                //Getting the button row and updating the table data
+                setTimeout(function () { pa.text(1); }, 100);
+            }
+            
+            $.ajax({
+                type: "POST",
+                url: "/Admin/ActivateAccount",
+                data: { 'data': data },
+                dataType: 'json',
+                success: function (response) {
+                    alert("You are done");
+                }
+            });
+            alert("Updated");
+        });
+    });
+</script>
+
+<script src="~/js/jquery.validate.js"></script>

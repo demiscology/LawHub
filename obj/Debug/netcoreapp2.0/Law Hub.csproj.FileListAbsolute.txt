@@ -1,0 +1,24 @@
+C:\Users\demilade\Desktop\My Project\Law Hub\Law Hub\bin\Debug\netcoreapp2.0\Law Hub.deps.json
+C:\Users\demilade\Desktop\My Project\Law Hub\Law Hub\bin\Debug\netcoreapp2.0\Law Hub.runtimeconfig.json
+C:\Users\demilade\Desktop\My Project\Law Hub\Law Hub\bin\Debug\netcoreapp2.0\Law Hub.runtimeconfig.dev.json
+C:\Users\demilade\Desktop\My Project\Law Hub\Law Hub\bin\Debug\netcoreapp2.0\Law Hub.dll
+C:\Users\demilade\Desktop\My Project\Law Hub\Law Hub\bin\Debug\netcoreapp2.0\Law Hub.pdb
+C:\Users\demilade\Desktop\My Project\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\Law Hub.csproj.CoreCompileInputs.cache
+C:\Users\demilade\Desktop\My Project\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\Law Hub.AssemblyInfoInputs.cache
+C:\Users\demilade\Desktop\My Project\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\Law Hub.AssemblyInfo.cs
+C:\Users\demilade\Desktop\My Project\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\Law Hub.dll
+C:\Users\demilade\Desktop\My Project\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\Law Hub.pdb
+C:\Users\demilade\Desktop\My Project\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\Law Hub.csprojResolveAssemblyReference.cache
+C:\Users\demilade\Desktop\My Project\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\demilade\Documents\Law Hub\Law Hub\bin\Debug\netcoreapp2.0\Law Hub.deps.json
+C:\Users\demilade\Documents\Law Hub\Law Hub\bin\Debug\netcoreapp2.0\Law Hub.runtimeconfig.json
+C:\Users\demilade\Documents\Law Hub\Law Hub\bin\Debug\netcoreapp2.0\Law Hub.runtimeconfig.dev.json
+C:\Users\demilade\Documents\Law Hub\Law Hub\bin\Debug\netcoreapp2.0\Law Hub.dll
+C:\Users\demilade\Documents\Law Hub\Law Hub\bin\Debug\netcoreapp2.0\Law Hub.pdb
+C:\Users\demilade\Documents\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\Law Hub.csprojResolveAssemblyReference.cache
+C:\Users\demilade\Documents\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\Law Hub.csproj.CoreCompileInputs.cache
+C:\Users\demilade\Documents\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\Law Hub.AssemblyInfoInputs.cache
+C:\Users\demilade\Documents\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\Law Hub.AssemblyInfo.cs
+C:\Users\demilade\Documents\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\Law Hub.dll
+C:\Users\demilade\Documents\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\Law Hub.pdb
+C:\Users\demilade\Documents\Law Hub\Law Hub\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

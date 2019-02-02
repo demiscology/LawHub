@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Law_Hub.Models.Lawyers_Profile>
+@using System.Linq
+@{
+    ViewData["Title"] = "SearchPage";
+    Layout = "~/Views/Shared/_LayoutClients.cshtml";
+}
+
+<style>
+    table {
+        font-family: Arial,sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+
+<!-- banner -->
+<div class="banner">
+    <h2>Search Results</h2>
+    <p><a>@Html.ActionLink("Home »", "Index", "Client")</a><a>@Html.ActionLink("Search »", "Search", "Client")</a> Search Results</p>
+</div>
+<!--//banner -->
+
+<div>
+    @ViewBag.error
+</div>
+
+<div class="services">
+    <div class="container ">
+        <h3 class="heading "></h3>
+        <div class="service_grids">
+            @foreach (var asset in Model)
+            {<div class="col-md-3 service_grid1">
+                    <img src="~/images/serv1.jpg" class="img-rounded" alt="service1" />
+                </div>
+                <div class="col-md-3 service_grid2">
+                    <h3>Full Name</h3>
+                    <p>@asset.First_Name @asset.Other_Names @asset.Last_Name</p>
+                    <h3>Qualifications</h3>
+                    <p>@asset.Other_Titles</p>
+                </div>
+                <div class="col-md-3 service_grid2">
+                    <h3>Contact</h3>
+                    <p>@asset.Email</p><br />
+                    <p>@asset.Phone_Number</p><br />
+                    <p>@asset.Office_Address</p>
+                </div>
+                <div class="col-md-3 service_grid2">
+                    <h3>Personal brief</h3>
+                    <p>@asset.Experiences</p>
+                </div>
+                <div class="clearfix"></div>
+            }
+        </div>
+    </div>
+</div>

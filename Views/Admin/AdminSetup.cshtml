@@ -1,0 +1,46 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "AdminSetup";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<!-- banner -->
+<div class="banner">
+    <h2>Administrator Setup</h2>
+    <p><a>@Html.ActionLink("Home »", "Index", "Admin")</a>New Admin Setup</p>
+</div>
+<!--//banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="main-content">
+                <div class="signin-form profile">
+                    <section>
+                        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" asp-controller="Account" asp-action="AdminRegister" method="post">
+                            <div class="signin-form">
+                                <div>
+                                    <h3 align="left">Register Account</h3>
+                                    <hr />
+                                    <div>
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+                                        <input name="Email" type="email" placeholder="E-mail" required="">
+                                        <input name="Username" type="text" placeholder="Username" required="">
+                                        <input name="Password" type="password" placeholder="Password" required="">
+                                        <input name="ConfirmPassword" type="password" placeholder="Confirm Password" required="">
+                                        <div class="pull-left text-justify form-check">
+                                            <input type="radio" name="UserType" id="radio1" value="Admin" checked>
+                                            <label for="radio1">Admin</label>
+                                        </div>
+                                        <input type="submit" value="Sign Up">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Report";
+    Layout = "~/Views/Shared/_LayoutClients.cshtml";
+}
+
+<!-- banner -->
+<div class="banner">
+    <h2>Report</h2>
+    <p><a>@Html.ActionLink("Home »", "Index", "Client")</a> <a>@Html.ActionLink("Cases »", "Cases", "Client")</a> Reoprt a case</p>
+</div>
+<!--//banner -->
+
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-heading">
+            <p>We make sure our customers have the highest comfort of using the Law Hub platform. Kindly report any form of abuse to Law Hub and it would be treated accordingly.</p>
+        </div>
+        <div class="contact-grids">
+            <div class=" col-md-5 contact-form">
+                <h4 class="heading">Report a case to us</h4>
+                <form action="#" method="post">
+                    <input type="text" placeholder="Subject" required="" />
+                    <input type="text" placeholder="Case Title" required="" />
+                    <input type="text" placeholder="Name of Lawyer" required="" />
+                    <textarea placeholder="Message" required=""></textarea>
+                    <div class="submit1">
+                        <input type="submit" value="Report">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>

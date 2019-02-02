@@ -1,0 +1,114 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>aspnet-Law_Hub-B05D0AB4-B883-4320-8065-FE82A74E1233</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180522171818_InitialMigration.cs" />
+    <Compile Remove="Migrations\20180522171818_InitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20180522172633_InitialMigration.cs" />
+    <Compile Remove="Migrations\20180522172633_InitialMigration.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.bootstrap.css" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.bootstrap.min.css" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.bootstrap4.css" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.bootstrap4.min.css" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.foundation.css" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.foundation.min.css" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.jqueryui.css" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.jqueryui.min.css" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.semanticui.css" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.semanticui.min.css" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\css\jquery.dataTables.css" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\css\jquery.dataTables.min.css" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\images\sort_asc.png" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\images\sort_asc_disabled.png" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\images\sort_both.png" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\images\sort_desc.png" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\images\sort_desc_disabled.png" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.bootstrap.js" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.bootstrap.min.js" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.bootstrap4.js" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.bootstrap4.min.js" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.foundation.js" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.foundation.min.js" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.jqueryui.js" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.jqueryui.min.js" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.semanticui.js" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.semanticui.min.js" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\js\jquery.dataTables.js" />
+    <Content Remove="wwwroot\DataTables\DataTables-1.10.16\js\jquery.dataTables.min.js" />
+    <Content Remove="wwwroot\DataTables\datatables.css" />
+    <Content Remove="wwwroot\DataTables\datatables.js" />
+    <Content Remove="wwwroot\DataTables\datatables.min.css" />
+    <Content Remove="wwwroot\DataTables\datatables.min.js" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="jQuery" Version="3.3.1" />
+    <PackageReference Include="jquery.datatables" Version="1.10.15" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.DynamicLinq" Version="1.0.8.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" PrivateAssets="All" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Sendgrid" Version="9.9.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.8.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Certificates\" />
+    <Folder Include="wwwroot\ProfilePictures\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.bootstrap.css" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.bootstrap.min.css" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.bootstrap4.css" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.bootstrap4.min.css" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.foundation.css" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.foundation.min.css" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.jqueryui.css" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.jqueryui.min.css" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.semanticui.css" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\css\dataTables.semanticui.min.css" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\css\jquery.dataTables.css" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\css\jquery.dataTables.min.css" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\images\sort_asc.png" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\images\sort_asc_disabled.png" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\images\sort_both.png" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\images\sort_desc.png" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\images\sort_desc_disabled.png" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.bootstrap.js" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.bootstrap.min.js" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.bootstrap4.js" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.bootstrap4.min.js" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.foundation.js" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.foundation.min.js" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.jqueryui.js" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.jqueryui.min.js" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.semanticui.js" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\js\dataTables.semanticui.min.js" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\js\jquery.dataTables.js" />
+    <None Include="wwwroot\DataTables\DataTables-1.10.16\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\DataTables\datatables.css" />
+    <None Include="wwwroot\DataTables\datatables.js" />
+    <None Include="wwwroot\DataTables\datatables.min.css" />
+    <None Include="wwwroot\DataTables\datatables.min.js" />
+  </ItemGroup>
+
+</Project>

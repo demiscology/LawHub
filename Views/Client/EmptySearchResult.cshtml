@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "EmptySearchPage";
+    Layout = "~/Views/Shared/_LayoutClients.cshtml";
+}
+
+<style>
+    table {
+        font-family: Arial,sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+
+<!-- banner -->
+<div class="banner">
+    <h2>Search Results</h2>
+    <p><a>@Html.ActionLink("Home »", "Index", "Client")</a><a>@Html.ActionLink("Search »", "Search", "Client")</a> Search Results</p>
+</div>
+<!--//banner -->
+
+<div class="services">
+    <div class="container ">
+        <h3 class="heading ">Sorry, no results found. Trying searching with exact keyword, E.G Lagos, SAN, FIrst Name, Experience etc. You can also view all Lawyers from the search page</h3>
+    </div>
+</div>

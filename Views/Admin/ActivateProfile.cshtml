@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Law_Hub.Models.ActivateAccounts>
+@{
+    ViewData["Title"] = "ActivateAccounts";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    table {
+        font-family: Arial,sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+
+<!-- banner -->
+<div class="banner">
+    <h2>Activate Profiles</h2>
+    <p><a>@Html.ActionLink("Home »", "Index", "Admin")</a>Manage Users » Manage Profile</p>
+</div>
+<!--//banner -->
+<link href="~/DataTables/datatables.css" rel="stylesheet" />
+
+
+<table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Sex</th>
+            <th>Phone Number</th>
+            <th>Certificates</th>
+            <th>Profile Activated</th>
+            <th>Activate</th>
+            <th>Dis Activate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var asset in Model)
+        {       
+            var key = @asset.Certificate_Paths.Split(',');
+            <tr id="@asset.Id">
+                <td>@asset.First_Name</td>
+                <td>@asset.Last_Name</td>
+                <td>@asset.Sex</td>
+                <td>@asset.Phone_Number</td>
+                <td>
+                    @foreach (var a in key)
+                    {
+
+                        var _str = string.Join("", a.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+                        if (_str.Length < 6)
+                        {
+                            continue;
+
+                        }
+                        <a target="_blank" href="/Certificates/@_str">Path_@_str <br /></a>
+                        
+                    }
+                </td>
+                <td>@asset.Profile_Activated</td>
+                <td><button id="Activate_Profile_@asset.Id" class="btn btn-block btn-success" type="submit" value="@asset.Id">Activate Profile</button></td>
+                <td><button id="Dis-activate_Account_@asset.Id" class="btn btn-block btn-danger" type="submit" value="@asset.Id&dis">Dis-Activate Profile</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script src="~/DataTables/datatables.min.js"></script>
+<script src="~/js/jquery.validate.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('button').click(function (evt) {
+            var data = $(this).val();
+            var btn = $(evt.target);
+            var pa = btn.parent('td').prev('td');
+
+
+
+            //Check if it is activating or dis activating
+            if (data.includes("&dis")) {
+                //Getting the button row and updating the table data
+                var ap = btn.parent('td').prev('td').prev('td');
+                setTimeout(function () { ap.text(0); }, 100);
+            } else {
+                //Getting the button row and updating the table data
+                setTimeout(function () { pa.text(1); }, 100);
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Admin/ActivateProfile",
+                data: { 'data': data },
+                dataType: 'json',
+                success: function (response) {
+                    alert("You are done");
+                }
+            });
+            alert("Updated");
+        });
+    });
+</script>
+

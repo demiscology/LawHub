@@ -1,0 +1,24 @@
+﻿@model Law_Hub.Models.Clients_Profile
+
+@{
+    ViewData["Title"] = "UpdateProfile";
+    Layout = "~/Views/Shared/_LayoutClients.cshtml";
+}
+
+<!-- banner -->
+<div class="banner">
+    <h2>Manage Profile</h2>
+    <p><a>@Html.ActionLink("Home »", "Index", "Client")</a> <a>@Html.ActionLink("Manage Profile »", "Index", "Client")</a> Update Profile</p>
+</div>
+<!--//banner -->
+
+<div id="Tokyo" class="tabcontent">
+    <form asp-controller="Client" asp-action="UpdateProfile" method="post">
+        <input type="text"  placeholder=@Model.FirstName disabled />
+        <input type="text" placeholder="@Model.OtherNames" disabled />
+        <input type="text" placeholder="@Model.LastName" disabled/>
+        <input type="email" name="Email" placeholder="Email" required=""/>
+        <input type="text" name="Phone_Number" placeholder="Phone Number" maxlength="13" required ="" />
+        <input type="submit" value="Update" />
+    </form>
+</div>

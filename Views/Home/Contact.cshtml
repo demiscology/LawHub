@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+
+}
+
+
+
+
+<div class="banner">
+    <h2>Contact Us</h2>
+    <p><a href="index.html">Home »</a> Contact us </p>
+</div>
+<!--//banner -->
+<!-- contact -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-heading">
+            <h3 class="heading">Contact us</h3>
+        </div>
+        <div class="contact-grids">
+            <div class=" col-md-5 contact-form">
+                <h4 class="heading">Get In Touch</h4>
+                <form action="#" method="post">
+                    <input type="text" placeholder="Full Name" required="" />
+                    <input type="email" placeholder="Your Mail" required="" />
+                    <input type="text" placeholder="Mobile Number" required="" />
+                    <textarea placeholder="Message" required=""></textarea>
+                    <div class="submit1">
+                        <input type="submit" value="sent">
+                    </div>
+                </form>
+            </div>
+            <div class=" col-md-7 map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.277175826828!2d3.3357896507460403!3d6.48654149528465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8eaa10e615a9%3A0xec9977d7bca16dd5!2s1+Babatope+St%2C+Orile+Iganmu%2C+Lagos!5e0!3m2!1sen!2sng!4v1523470251917" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>                <div class="col-md-4 contact-grid1">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <div class="contact-right">
+                        <p>Address</p>
+                        <span>1 Babatope, Aguda, <span>Surulere Lagos City.</span></span>
+                    </div>
+                </div>
+                <div class="col-md-4 contact-grid1">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <div class="contact-right">
+                        <p>Phone</p>
+                        <span>+234 703-620-0704</span><br />
+                        <span>+234 703-620-0704</span>
+                    </div>
+                </div>
+                <div class="col-md-4 contact-grid1">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <div class="contact-right">
+                        <p>Email</p>
+                        <a href="mailto:info@example.com">info@LawHub.com</a>
+                        <a href="mailto:info@example1.com">Helpdesk@LawHub.com</a>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //contact -->
+<!--SignUp Modal-->
+<div id="popup">
+    <div id="small-dialog" class="mfp-hide">
+        <div class="signin-form profile">
+            <h3>Sign Up</h3>
+            <div class="login-form">
+                <form asp-route-returnUrl="@ViewData["ReturnUrl"]" asp-controller="Account" asp-action="Register" method="post">
+                    <input name="Email" type="email" placeholder="E-mail" required="">
+                    <input name="Username" type="text" placeholder="Username" required="">
+                    <input name="Password" type="password" placeholder="Password" required="">
+                    <input name="ConfirmPassword" type="password" placeholder="Confirm Password" required="">
+                    <div class="text-danger text-justify">
+                        <h4>Choose if you are registering as a Client or as a Lawyer</h4>
+                    </div>
+                    <div class="pull-left text-justify form-check">
+                        <input type="radio" name="UserType" id="radio1" value="Lawyer">
+                        <label for="radio1">Lawyer</label>
+                        <input type="radio" id="radio2" name="UserType" value="Client" checked="checked">
+                        <label for="radio2">Client</label>
+                    </div>
+                    <input type="submit" value="Sign Up">
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--//SignUp Modal-->
+<!-- signin Model -->
+<!-- Modal1 -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body modal-body-sub_agile">
+                <div class="main-mailposi">
+                    <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                </div>
+                <div class="modal_body_left modal_body_left1">
+                    <h3 class="agileinfo_sign">Login To Your Account</h3>
+                    <form asp-route-returnurl="@ViewData["ReturnUrl"]" asp-controller="Account" asp-action="Login">
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="text" placeholder="Email" name="UserName" required="">
+                        </div>
+                        <div class="styled-input">
+                            <input type="password" placeholder="Password" name="Password" required="">
+                        </div>
+                        <input type="submit">
+                    </form>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- //Modal content-->
+    </div>
+</div>
+<!-- //Modal1 -->
+<!-- //signin Model -->

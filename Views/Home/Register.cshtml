@@ -1,0 +1,118 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<div class="banner">
+    <h2>Register</h2>
+    <p><a>@Html.ActionLink("Home »", "Test", "Home")</a>Register Account</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="main-content">
+                <div class="signin-form profile">
+                    <section>
+                        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" asp-controller="Account" asp-action="Register" method="post">
+                            <div class="signin-form">
+                                <div>
+                                    <h3 align="left">Register Account</h3>
+                                    <hr />
+                                    <div>
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+                                        <input name="Email" type="email" placeholder="E-mail" required="">
+                                        <input name="Username" type="text" placeholder="Username" required="">
+                                        <input name="Password" type="password" placeholder="Password" required="">
+                                        <input name="ConfirmPassword" type="password" placeholder="Confirm Password" required="">
+                                        <div class="text-danger text-justify">
+                                            <h4>Choose if you are registering as a Client or as a Lawyer</h4>
+                                        </div>
+                                        <div class="pull-left text-justify form-check">
+                                            <input type="radio" name="UserType" id="radio1" value="Lawyer">
+                                            <label for="radio1">Lawyer</label>
+                                            <input type="radio" id="radio2" name="UserType" value="Client" checked="checked">
+                                            <label for="radio2">Client</label>
+                                        </div>
+                                        <input type="submit" value="Sign Up">
+                                        @ViewBag.error
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <p>
+                                        <a asp-action="Login" asp-controller="Home">Already have an account? Click to Sign in</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--SignUp Modal-->
+<div id="popup">
+    <div id="small-dialog" class="mfp-hide">
+        <div class="signin-form profile">
+            <h3>Sign Up</h3>
+            <div class="login-form">
+                <form asp-route-returnUrl="@ViewData["ReturnUrl"]" asp-controller="Account" asp-action="Register" method="post">
+                    <input name="Email" type="email" placeholder="E-mail" required="">
+                    <input name="Username" type="text" placeholder="Username" required="">
+                    <input name="Password" type="password" placeholder="Password" required="">
+                    <input name="ConfirmPassword" type="password" placeholder="Confirm Password" required="">
+                    <div class="text-danger text-justify">
+                        <h4>Choose if you are registering as a Client or as a Lawyer</h4>
+                    </div>
+                    <div class="pull-left text-justify form-check">
+                        <input type="radio" name="UserType" id="radio1" value="Lawyer">
+                        <label for="radio1">Lawyer</label>
+                        <input type="radio" id="radio2" name="UserType" value="Client" checked="checked">
+                        <label for="radio2">Client</label>
+                    </div>
+                    <input type="submit" value="Sign Up">
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--//SignUp Modal-->
+<!-- signin Model -->
+<!-- Modal1 -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body modal-body-sub_agile">
+                <div class="main-mailposi">
+                    <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                </div>
+                <div class="modal_body_left modal_body_left1">
+                    <h3 class="agileinfo_sign">Login To Your Account</h3>
+                    <form asp-route-returnurl="@ViewData["ReturnUrl"]" asp-controller="Account" asp-action="Login">
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="text" placeholder="Email" name="UserName" required="">
+                        </div>
+                        <div class="styled-input">
+                            <input type="password" placeholder="Password" name="Password" required="">
+                        </div>
+                        <input type="submit">
+                    </form>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- //Modal content-->
+    </div>
+</div>
+<!-- //Modal1 -->
+<!-- //signin Model -->

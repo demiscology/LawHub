@@ -1,0 +1,178 @@
+﻿
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+<!-- banner -->
+<div class="banner">
+    <h2>About Us</h2>
+    <p><a href="index.html">Home »</a> About us </p>
+</div>
+<!--//banner -->
+
+
+<div class="welcome">
+    <div class="container">
+        <div class="col-md-6 welcome_left">
+            <div class="layer1">
+                <div class="welcome_left_info">
+                    <h3>We offer best services</h3>
+                    <p>Our Lawyers and Clients who have been using this platform can testify to the services and support we provide on the Law Hub community.</p>
+                    <div class="read">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 welcome_right">
+            <div class="inner_grid1">
+                <div class="col-md-2 icon color1">
+                    <span class="fa fa-money" aria-hidden="true"></span>
+                </div>
+                <div class="col-md-10 grid_info">
+                    <h3>Some extra cash</h3>
+                    <p>While keeping your payjob, you can have your profile get you job</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="inner_grid1">
+                <div class="col-md-2 icon color2">
+                    <span class="fa fa-users" aria-hidden="true"></span>
+                </div>
+                <div class="col-md-10 grid_info">
+                    <h3>Profile Hosting</h3>
+                    <p>Every Lawyer in the world can meet and make new clients any where in the world all because they have their profile hosted on Law Hub</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="inner_grid1">
+                <div class="col-md-2 icon color3">
+                    <span class="fa fa-line-chart" aria-hidden="true"></span>
+                </div>
+                <div class="col-md-10 grid_info">
+                    <h3>We have grown by 80% oer the months</h3>
+                    <p>By 2020 internet would have taken over the world, so why not you get a Lawyer online and be able to check on at any time.</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- //banner bottom -->
+<!-- Who we are -->
+<div class="who">
+    <div class="layer">
+        <h3 class="heading">About Us</h3>
+        <div class="container">
+            <div class="who_grids">
+                <div class="col-md-6 who_grid_left">
+                    <h3>Who we are</h3>
+                    <h4>Law Hub is a community of Lawyers and Clients. </h4>
+                    <p>The community came to existence upon the fact that there were platforms to advertise other services but there wasnt a platform for lawyers to meet client online. It existence done the following:-</p>
+                    <p class="listing"><i class="fa fa-chevron-right" aria-hidden="true"></i>Any one in need of Legal Services can actually check out qualified Lawyers on Law Hub. </p>
+                    <p class="listing"><i class="fa fa-chevron-right" aria-hidden="true"></i>There is reduced stress of looking for a lawyer specialized in what you need. </p>
+                    <p class="listing"><i class="fa fa-chevron-right" aria-hidden="true"></i>You can easily get a lawyer in the location where you need the service. E.g You need documentation on Land in another state, why not get a lawyer in that state do the job for you</p>
+                    <div class="read">
+                        <a href="#" data-toggle="modal" data-target="#myModal">Read more »</a>
+                    </div>
+                </div>
+                <div class="col-md-6 who_grid_right">
+                    <p>.............................</p>
+                    <div class="bar-grids">
+                        <h6>Management<span> 90% </span></h6>
+                        <div class="progress">
+                            <div class="progress-bar bar1 progress-bar-striped active" style="width: 90%">
+                            </div>
+                        </div>
+                        <div class="mid-bar">
+                            <h6>Marketing<span> 75% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar bar2 progress-bar-striped active" style="width: 75%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mid-bar">
+                            <h6>Strategy<span>80% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar bar3 progress-bar-striped active" style="width: 80%">
+                                </div>
+                            </div>
+                        </div>
+                        <h6>Deployment<span>95% </span></h6>
+                        <div class="progress">
+                            <div class="progress-bar bar4 progress-bar-striped active" style="width: 95%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Who we are -->
+<!--SignUp Modal-->
+<div id="popup">
+    <div id="small-dialog" class="mfp-hide">
+        <div class="signin-form profile">
+            <h3>Sign Up</h3>
+            <div class="login-form">
+                <form asp-route-returnUrl="@ViewData["ReturnUrl"]" asp-controller="Account" asp-action="Register" method="post">
+                    <input name="Email" type="email" placeholder="E-mail" required="">
+                    <input name="Username" type="text" placeholder="Username" required="">
+                    <input name="Password" type="password" placeholder="Password" required="">
+                    <input name="ConfirmPassword" type="password" placeholder="Confirm Password" required="">
+                    <div class="text-danger text-justify">
+                        <h4>Choose if you are registering as a Client or as a Lawyer</h4>
+                    </div>
+                    <div class="pull-left text-justify form-check">
+                        <input type="radio" name="UserType" id="radio1" value="Lawyer">
+                        <label for="radio1">Lawyer</label>
+                        <input type="radio" id="radio2" name="UserType" value="Client" checked="checked">
+                        <label for="radio2">Client</label>
+                    </div>
+                    <input type="submit" value="Sign Up">
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--//SignUp Modal-->
+<!-- signin Model -->
+<!-- Modal1 -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body modal-body-sub_agile">
+                <div class="main-mailposi">
+                    <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                </div>
+                <div class="modal_body_left modal_body_left1">
+                    <h3 class="agileinfo_sign">Login To Your Account</h3>
+                    <form asp-route-returnurl="@ViewData["ReturnUrl"]" asp-controller="Account" asp-action="Login">
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="text" placeholder="Email" name="UserName" required="">
+                        </div>
+                        <div class="styled-input">
+                            <input type="password" placeholder="Password" name="Password" required="">
+                        </div>
+                        <input type="submit">
+                    </form>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- //Modal content-->
+    </div>
+</div>
+<!-- //Modal1 -->
+<!-- //signin Model -->

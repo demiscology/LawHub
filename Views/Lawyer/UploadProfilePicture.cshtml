@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "UploadProfilePicture";
+    Layout = "~/Views/Shared/_LayoutLawyers.cshtml";
+}
+<style>
+    .wrapper {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0px;
+        width: 995px;
+    }
+
+    .output_image {
+        max-width: 500px;
+    }
+</style>
+
+<!-- banner -->
+<div class="banner">
+    <h2>EIDT PROFILE</h2>
+    <p><a>@Html.ActionLink("Home »", "Index", "Lawyer")</a> <a>@Html.ActionLink("Manage Profile »", "Index", "Lawyer")</a> Upload Profile Picture</p>
+</div>
+<!--//banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="main-content">
+                <div class="signin-form profile">
+                    <div class="signin-form">
+                        <div>
+                            <form asp-area="" asp-controller="Lawyer" asp-action="UploadProfilePicture" method="post" enctype="multipart/form-data">
+                                <input type="file" name="ProfilePicture" accept="image/*" onchange="preview_image(event)" />
+                                <img id="output_image" class="img" style="height:285px;width:285px;"/>
+                                <input type="submit" value="Upload Profile Picture" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function preview_image(event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var output = document.getElementById('output_image');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>

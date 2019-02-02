@@ -1,0 +1,149 @@
+﻿@model Law_Hub.Models.Lawyers_Profile
+@{
+    ViewData["Title"] = "CreateProfile";
+    Layout = "~/Views/Shared/_LayoutLawyers.cshtml";
+}
+
+<script>(function (e, t, n) { var r = e.querySelectorAll("html")[0]; r.className = r.className.replace(/(^|\s)no-js(\s|$)/, "$1js$2") })(document, window, 0);</script>
+
+<!-- banner -->
+<div class="banner">
+    <h2>Welcome to LawHub, Create a Profile</h2>
+    <p><a>@Html.ActionLink("Home »", "Index", "Lawyer")</a>Create Profile</p>
+</div>
+<!--//banner -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="main-content">
+                <div class="signin-form profile">
+                    <form asp-area="" asp-action="CreateProfile" asp-controller="Lawyer" enctype="multipart/form-data">
+                        <div class="signin-form">
+                            <div>
+                                <h3 align="left">Create Your Profile</h3>
+                                <div style="text-align:left">
+                                    <h4>Title: </h4>
+                                    <input type="radio" id="Mr" value="Mr" name="Title" checked>
+                                    <label for="Mr">Mr</label>
+                                    <input type="radio" id="Miss" value="Miss" name="Title">
+                                    <label for="Miss">Miss</label>
+                                    <input type="radio" id="Mrs" value="Mrs" name="Title">
+                                    <label for="Mrs">Mrs</label>
+                                </div>
+                                <input type="text" name="Other_Titles" placeholder="Other Title's  e.g SAN" required="">
+                                <input type="text" name="First_Name" placeholder="First Name" size="10" required="">
+                                <input type="text" name="Other_Names" placeholder="Other Names" size="10" required="">
+                                <input type="text" name="Last_Name" placeholder="Last Name" required="">
+                                <div style="text-align:left">
+                                    <h4>Sex: </h4>
+                                    <p>
+                                        <input type="radio" id="test1" value="Male" name="Sex" checked>
+                                        <label for="test1">Male</label>
+                                    </p>
+                                    <p>
+                                        <input type="radio" id="test2" value="Female" name="Sex">
+                                        <label for="test2">Female</label>
+                                    </p>
+                                </div>
+                            </div>
+                            <input type="text" name="Maiden_Name" placeholder="Maiden Name(Females only)">
+                            <input type="text" name="Phone_Number" placeholder="Phone Number" required="">
+                            <input type="email" placeholder="Email" name="Email" required="">
+                            <input type="text" name="Office_Address" placeholder="Office Address" required="">
+
+                            <textarea rows="4" cols="5" name="Experiences" placeholder="Experiences(not more than 200 characters)" maxlength="200"></textarea>
+
+                            <div class="box" style="text-align:left">
+                                <input type="file" required="" name="Certificates_Paths" id="file-1" class="inputfile inputfile-1 invisible" data-multiple-caption="  {count} files selected" multiple />
+                                <label for="file-1" class="fa fa-upload inputlabel" id="label_span"><span> Upload Your Call to Bar and Law School certiicates</span></label>
+                            </div>
+
+                            <h4 class="text-warning" style="text-align:left"> Maiden name is for females who have their maiden name on their certificates</h4>
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-success btn-lg" style="background-color:#18ba60">Submit</button>
+                        <button type="reset" class="btn btn-danger btn-lg">Clear All</button>
+                        @ViewBag.error
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .fa-upload {
+        margin-right:10px;
+    }
+
+    .inputlabel {
+        background-color: #17202A;
+        color: #52BE80;
+        padding: 30px;
+        transition: 0.3s;
+    }
+
+        .inputlabel:hover {
+            background-color: #2C3E50;
+            cursor: pointer
+        }
+
+    [type="radio"]:checked,
+    [type="radio"]:not(:checked) {
+        position: absolute;
+        left: -9999px;
+    }
+
+        [type="radio"]:checked + label,
+        [type="radio"]:not(:checked) + label {
+            position: relative;
+            padding-left: 28px;
+            cursor: pointer;
+            line-height: 20px;
+            display: inline-block;
+            color: #666;
+        }
+
+            [type="radio"]:checked + label:before,
+            [type="radio"]:not(:checked) + label:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 18px;
+                height: 18px;
+                border: 1px solid #ddd;
+                border-radius: 100%;
+                background: #fff;
+            }
+
+            [type="radio"]:checked + label:after,
+            [type="radio"]:not(:checked) + label:after {
+                content: '';
+                width: 12px;
+                height: 12px;
+                background: #58D68D;
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                border-radius: 100%;
+                -webkit-transition: all 0.2s ease;
+                transition: all 0.2s ease;
+            }
+
+            [type="radio"]:not(:checked) + label:after {
+                opacity: 0;
+                -webkit-transform: scale(0);
+                transform: scale(0);
+            }
+
+            [type="radio"]:checked + label:after {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+</style>
+<script src=@Url.Content("/Scripts/js/custom-file-input.js")></script>
